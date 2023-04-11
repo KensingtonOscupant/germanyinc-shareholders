@@ -2,3 +2,4 @@ data/
 germanyinc_venv/
 .RHistory
 .DS_Store
+.env
