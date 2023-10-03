@@ -17,6 +17,10 @@ jobs:
         id: commit
         run: echo "::set-output name=commit::$(git rev-parse main)"
 
+      - run: |
+            git config --global user.email "github.actions@example.com"
+            git config --global user.name "NBViewerLinkBot"
+
       - name: Update Links in README
         run: |
           # Replace links in README with the latest commit hash
