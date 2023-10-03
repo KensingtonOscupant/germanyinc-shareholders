@@ -1,0 +1,28 @@
+name: Update Links
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update_links:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Get Latest Commit Hash
+        id: commit
+        run: echo "::set-output name=commit::$(git rev-parse main)"
+
+      - name: Update Links in README
+        run: |
+          # Replace links in README with the latest commit hash
+          latest_commit="${{ steps.commit.outputs.commit }}"
+          sed -i "s|https://nbviewer.org/github/{username}/{repository}/blob/{branch}/{filepath}|https://nbviewer.org/github/{username}/{repository}/blob/${latest_commit}/{filepath}|g" README.md
+          git add README.md
+          git commit -m "Update links to latest commit"
+          git push
+
