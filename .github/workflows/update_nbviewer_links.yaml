@@ -18,7 +18,7 @@ jobs:
         run: echo "::set-output name=commit::$(git rev-parse main)"
 
       - run: |
-            git config --global user.email "felix.ringe@fu-berlin.de"
+            git config --global user.email "github.actions@example.com"
             git config --global user.name "NBViewerLinkBot"
 
       - name: Update Links in README
