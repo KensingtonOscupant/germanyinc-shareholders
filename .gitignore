@@ -3,3 +3,4 @@ germanyinc_venv/
 .RHistory
 .DS_Store
 .env
+src/wandb/

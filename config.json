@@ -1,0 +1,30 @@
+{
+    "csv_file_path": "../data/240104_embeddings_id_test_results_5.csv",
+    "wandb_project_name": "germanyinc-embeddings-index",
+    "wandb_table_columns_prod": [
+        "target_id",
+        "notifying_party_target", 
+        "matched_id",
+        "notifying_party_matched",  
+        "distance", 
+        "legal_type_target", 
+        "legal_type_matched",
+        "expected_result",
+        "prediction",
+        "error",
+        "correct",
+        "cost"
+    ],
+    "gpt_model_name": "gpt-4-1106-preview",
+    "mixtral_model_name": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "token_cost": {
+        "input_price_per_1000": 0.01,
+        "output_price_per_1000": 0.03
+    },
+    "prompts": {
+        "system_prompt": "You are a helpful assistant.",
+        "user_prompts": {
+            "spellings_assessment_prompt": "In the following, your will receive two spellings of legal entities. Is the difference more likely to be a typo/alternative spelling of the same entity or are the two spellings referring to separate subsidiaries, funds or companies, like e.g. a parent-child company relationship? Answer in two sentences explaining your reasoning and take a clear stance on whether they are the same entity, different entities or whether you are unsure. Spelling 1: {spelling_1} Spelling 2: {spelling_2}",
+            "response_assessment_prompt": "In the following you will receive a response to the question of whether two spellings of legal entities are the same or different. Without assessing the spellings yourself, tell me which stance the response is taking. If it says that the spellings refer to the same entity, answer with [1], if it states they refer to different ones, answer with [0]. If you are unsure, answer with [2]. Response: {response}"
+    }
+}}
