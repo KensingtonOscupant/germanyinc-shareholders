@@ -1,5 +1,5 @@
 {
-    "csv_file_path": "../data/240106_sampled_test_set.csv",
+    "csv_file_path": "../data/240108_sampled_test_set_3.csv",
     "wandb_project_name": "germanyinc-embeddings-index",
     "wandb_table_columns_prod": [
         "target_id",
@@ -24,7 +24,7 @@
     "prompts": {
         "system_prompt": "You are a helpful assistant.",
         "user_prompts": {
-            "spellings_assessment_prompt": "In the following, your will receive two spellings of legal entities. Is the difference more likely to be a typo/alternative spelling of the same entity or are the two spellings referring to separate subsidiaries, companies, funds, or classes of funds like e.g. a parent-child company relationship? Answer in two sentences explaining your reasoning and take a clear stance on whether they are the same entity, different entities or whether you are unsure. Spelling 1: {spelling_1} Spelling 2: {spelling_2}",
+            "spellings_assessment_prompt": "In the following, you will receive two different spellings of legal entities. Are the differences more likely to be a typo/alternative spelling of the same entity or are the two spellings referring to separate companies, subsidiaries, funds, or classes of funds? Note that there can be more than one difference, address all of them. Answer in two sentences explaining your reasoning and take a clear stance on whether they are the same entity, different entities or whether you are unsure. Even if just one of several differences indicates they are separate entities, say that they are separate. Spelling 1: {spelling_1} Spelling 2: {spelling_2}",
             "response_assessment_prompt": "In the following you will receive a response to the question of whether two spellings of legal entities are the same or different. Without assessing the spellings yourself, tell me which stance the response is taking. If it says that the spellings refer to the same entity, answer with [1], if it states they refer to different ones, answer with [0]. If you are unsure, answer with [2]. Response: {response}",
             "natural_vs_legal_prompt": "Evaluate the following input on whether it is a natural person or legal entity. If the input represents a natural person, respond with '[0]'. If the input represents a legal entity, respond with '[1]'. If you are unsure, respond with '[2]'. Input: {input}"
     }
